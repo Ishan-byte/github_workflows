@@ -17,6 +17,6 @@ jobs:
          echo ${{ github.event.pull_request.merged }}
 
       - name: On Merge Trigger
-        if: github.event.pull_request.merged == 'true'
+        if: github.event.pull_request.merged == true
         run: |
          echo 'Working'
