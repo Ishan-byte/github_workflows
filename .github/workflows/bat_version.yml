@@ -1,0 +1,22 @@
+name: github-actions
+run-name: ${{ github.actor}} is learning Github Actions
+
+on: 
+  pull_request:
+    types: [closed, opened]
+    branches:
+      - "main"
+      - "dev"
+
+jobs:
+  merge_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Random Test 
+        run: |
+         echo 'Test'
+
+      - name: On Merge Trigger
+        if: github.event.pull_request.merged == 'true'
+        run: |
+         echo 'Working'
